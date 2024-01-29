@@ -4,24 +4,13 @@
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 import Tooltip from "@mui/material/Tooltip";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import "./styles.css";
-import { useContext, useEffect } from "react";
-import watchListContext from "../../../context/watchListContext";
 import { Link } from "react-router-dom";
+function List({ coin }) {
+  
 
-function List({ isWatchList = false, coin }) {
-  const { watchlistId, setWatchlistId } = useContext(watchListContext);
+  
 
-  const handleOnWatchList = (coinId) => {
-    if (!watchlistId.includes(coin)) {
-      setWatchlistId([...watchlistId, coinId]);
-    }
-  };
-
-  useEffect(() => {
-    localStorage.setItem("watchlistId", JSON.stringify(watchlistId));
-  }, [watchlistId]);
 
   return (
     <Link to={`/coin/${coin.id}`}>
@@ -82,16 +71,7 @@ function List({ isWatchList = false, coin }) {
               </Tooltip>
 
             </div>
-            {isWatchList && (
-              <div
-                className="watchlist-icon"
-                onClick={() => handleOnWatchList(coin.id)}
-              >
-                <AddShoppingCartIcon
-                  sx={{ fontSize: "30px", color: "#3a80e9" }}
-                />
-              </div>
-            )}
+         
           </div>
         </>
       ) : (
