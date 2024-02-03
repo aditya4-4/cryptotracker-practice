@@ -125,15 +125,10 @@
 }
 
 
-.watchlist-div{
+.watchlist-icon{
     display: flex;
     justify-content: flex-end;
     align-items: center;
    margin-left: auto;
    margin-right: 1.3rem;
-}
-
-.watchlist-icon{
-    width: 1.5rem;
-    height: 1.5rem;
 }
